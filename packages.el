@@ -44,17 +44,17 @@
       (add-hook 'exwm-mode-hook #'hidden-mode-line-mode))
     (setq exwm-input-line-mode-passthrough t)
     ;; Trying to make shell-pop with a real terminal :P
-    ;; (defun exwm-launch-term ()
-    ;;   (start-process-shell-command exwm--terminal-command
-    ;;                                nil exwm--terminal-command))
-    ;; (defun shell-pop-exwm-term (index)
-    ;;   (interactive "P")
-    ;;   (require 'shell-pop)
-    ;;   (shell-pop--set-shell-type
-    ;;    'shell-pop-shell-type
-    ;;    '("exwm-term"
-    ;;      "Termite" #'exwm-launch-term))
-    ;;   (shell-pop index))
+    (defun exwm-launch-term ()
+      (start-process-shell-command exwm--terminal-command
+                                   nil exwm--terminal-command))
+    (defun shell-pop-exwm-term (index)
+      (interactive "P")
+      (require 'shell-pop)
+      (shell-pop--set-shell-type
+       'shell-pop-shell-type
+       '("exwm-term"
+         "st" #'exwm-launch-term))
+      (shell-pop index))
     :config
     ;; (when dotspacemacs-use-ido
     ;;   (exwm-enable-ido-workaround))
