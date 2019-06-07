@@ -55,6 +55,7 @@
        '("exwm-term"
          "st" #'exwm-launch-term))
       (shell-pop index))
+
     :config
     ;; (when dotspacemacs-use-ido
     ;;   (exwm-enable-ido-workaround))
@@ -230,9 +231,9 @@
     (exwm-input-set-key (kbd "s-]") #'spacemacs/exwm-workspace-next)
     (exwm-input-set-key (kbd "s-[") #'spacemacs/exwm-workspace-prev)
 
-    (require 'exwm-randr)
-    (setq exwm-randr-workspace-output-plist '(0 "VGA1"))
-    (exwm-randr-enable)
+    ;; (require 'exwm-randr)
+    ;; (setq exwm-randr-workspace-output-plist '(0 "VGA1"))
+    ;; (exwm-randr-enable)
     ;; The following example demonstrates how to use simulation keys to mimic the
     ;; behavior of Emacs. The argument to `exwm-input-set-simulation-keys' is a
     ;; list of cons cells (SRC . DEST), where SRC is the key sequence you press and
